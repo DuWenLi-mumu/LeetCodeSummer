@@ -9,21 +9,21 @@ public class LinkedListCycleII142 {
     }
 }
 
-class ListNode {
+class ListNode142 {
     int val;
-    ListNode next;
+    ListNode142 next;
 
-    ListNode(int x) {
+    ListNode142(int x) {
         val = x;
         next = null;
     }
 }
 
 class Solution142 {
-    public ListNode detectCycle(ListNode head) {
+    public ListNode142 detectCycle(ListNode142 head) {
         //先走到他们相遇的地方
-        ListNode fast=head;
-        ListNode slow=head;
+        ListNode142 fast=head;
+        ListNode142 slow=head;
         if (head==null||head.next==null){
             return null;
         }
