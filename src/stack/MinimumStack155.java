@@ -21,7 +21,7 @@ public class MinimumStack155 {
             mymin.add(x);
         }else{
             mystack.add(x);
-            if (x<mymin.get(mymin.get(mymin.size()-1))){
+            if (x<=mymin.get(mymin.size()-1)){
                 mymin.add(x);
             }
         }
@@ -52,7 +52,14 @@ public class MinimumStack155 {
 
     public static void main(String[] args) {
         MinimumStack155 obj = new MinimumStack155();
-        obj.push(5);
+        obj.push(0);
+        obj.push(1);
+        obj.push(0);
+
+        System.out.println(obj.getMin());
+        obj.pop();
+
+        System.out.println(obj.getMin());
     }
 }
 

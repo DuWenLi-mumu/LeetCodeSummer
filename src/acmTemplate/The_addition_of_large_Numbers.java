@@ -1,4 +1,4 @@
-package acm_template;
+package acmTemplate;
 
 import java.util.Scanner;
 
