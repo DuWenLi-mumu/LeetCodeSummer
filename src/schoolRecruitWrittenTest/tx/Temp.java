@@ -9,11 +9,11 @@ public class Temp {
 
 //class TreeConvert {
 //
-//    TreeNode tail = null;
-//    TreeNode head = null;
+//    stack.TreeNode tail = null;
+//    stack.TreeNode head = null;
 //
 //    //head 保存链表的头节点，tail 保存当前节点的前一个节点。
-//    public TreeNode Convert(TreeNode pRootOfTree) {
+//    public stack.TreeNode Convert(stack.TreeNode pRootOfTree) {
 //        if (pRootOfTree == null) {
 //            return null;
 //        }
