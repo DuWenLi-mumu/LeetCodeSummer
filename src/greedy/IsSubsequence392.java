@@ -13,14 +13,14 @@ public class IsSubsequence392 {
             return;
         }
         for (int i = tIndex; i <t.length(); i++) {
-            if (sIndex>=s.length()-1){
+            if (sIndex>=s.length()){
                 break;
             }
             if (s.charAt(sIndex)==t.charAt(i)){
                 sIndex++;
             }
         }
-        if (sIndex>=(s.length()-1)){
+        if (sIndex>=(s.length())){
             isMatch=true;
         }
     }
@@ -39,6 +39,49 @@ public class IsSubsequence392 {
         return isMatch;
     }
     public static void main(String[] args) {
-
+        IsSubsequence392 test=new IsSubsequence392();
+        String s="abc";
+        String t="ahbgdc";
+        System.out.println(test.isSubsequence(s,t));
     }
 }
+
+/**
+ * 暴力解法 超时
+ * class Solution{
+ *     String s="";
+ *     String t="";
+ *     boolean isMatch=false;
+ *     public void matchIndex(int tIndex){
+ *         int sIndex=0;
+ *         if (tIndex+s.length()>=t.length()){
+ *             return;
+ *         }
+ *         for (int i = tIndex; i <t.length(); i++) {
+ *             if (sIndex>=s.length()){
+ *                 break;
+ *             }
+ *             if (s.charAt(sIndex)==t.charAt(i)){
+ *                 sIndex++;
+ *             }
+ *         }
+ *         if (sIndex>=(s.length())){
+ *             isMatch=true;
+ *         }
+ *     }
+ *     public boolean isSubsequence(String s, String t) {
+ *         this.s=s;
+ *         this.t=t;
+ *         if (s.equals(t)){
+ *             return true;
+ *         }
+ *         for (int i = 0; i <t.length()-s.length()+1 ; i++) {
+ *             matchIndex(i);
+ *             if (isMatch){
+ *                 return true;
+ *             }
+ *         }
+ *         return isMatch;
+ *     }
+ *}
+ */
