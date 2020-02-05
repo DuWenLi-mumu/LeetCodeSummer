@@ -1,37 +1,30 @@
-//package recursion;
-//import java.lang.Math;
-///**
-// * Created by 杜文丽 on 7/23/2019 8:16 PM
-// **/
-//public class LongestUnivaluePath687 {
-//    public boolean compare(stack.TreeNode node1,stack.TreeNode node2){
-//        if(node1==null||node2==null){
-//            return false;
-//        }else if(node1.val==node2.val){
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
-//    public int subfind(stack.TreeNode root,int num,int val){
-//        if(root==null){
-//            return num;
-//        }else if(root.val!=val){
-//
-//        }
-//    }
-//    public int longestUnivaluePath(stack.TreeNode root) {
-//        if (root==null){
-//            return 0;
-//        }else{
-//            return subfind(root,0,0);
-//        }
-//    }
-//}
-//class stack.TreeNode {
-//    int val;
-//    stack.TreeNode left;
-//    stack.TreeNode right;
-//    stack.TreeNode(int x) { val = x;
-//    }
-//}
+package recursion;
+class LongestUnivaluePath687{
+    int res=0;
+    public int longestUnivaluePath(TreeNode root) {
+        if (root==null){
+            return 0;
+        }
+        dfs(root,root.val);
+        return res;
+    }
+    public int dfs(TreeNode node,int parent){
+        if (node==null){
+            return 0;
+        }
+        int left=0;
+        int right=0;
+        if (node.left!=null){
+            left=dfs(node.left,node.val);
+        }
+        if (node.right!=null){
+            right=dfs(node.right,node.val);
+        }
+        res=Math.max(res,right+left);
+        if (parent==node.val){
+            return Math.max(left,right)+1;
+        }
+        return 0;
+
+    }
+}
