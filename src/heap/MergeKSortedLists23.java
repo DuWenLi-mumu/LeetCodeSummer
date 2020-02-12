@@ -5,20 +5,15 @@ package heap;
  **/
 public class MergeKSortedLists23 {
     public static void main(String[] args) {
-        ListNode n1=new ListNode(1);
-        ListNode n2=new ListNode(4);
-        ListNode n3=new ListNode(5);
-        ListNode n4=new ListNode(1);
-        ListNode n5=new ListNode(3);
-        ListNode n6=new ListNode(4);
-        n1.next=n2;
-        n2.next=n3;
-
-        n4.next=n5;
-        n5.next=n6;
-        ListNode[] listNodes={n1,n4};
-        mergeKLists(listNodes);
-
+        boolean able=false;
+        int res=3;
+        while (!able){
+            if (res%2==1&&res%3==0&&res%4==1&&res%5==4&&res%6==3&&res%7==0&&res%8==1&&res%9==0){
+                able=true;
+                System.out.println(res);
+            }
+            res++;
+        }
     }
     public static ListNode mergeKLists(ListNode[] lists) {
         if (lists.length<=0){
