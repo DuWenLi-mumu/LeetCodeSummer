@@ -27,18 +27,13 @@ public class TwoCityScheduling1029 {
             b_aCost[i][0]=costs[i][1]-costs[i][0];
             b_aCost[i][1]=i;
         }
-        Arrays.sort(b_aCost, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] ints, int[] t1) {
-                return ints[0]-t1[0];
-            }
-        });
+        Arrays.sort(b_aCost,Comparator.comparingInt(o -> o[0]));
         int res=0;
         for (int i = 0; i <costs.length/2 ; i++) {
-            res+=costs[b_aCost[i][1]][0];
+            res+=costs[b_aCost[i][1]][1];
         }
         for (int i = costs.length/2; i <costs.length ; i++) {
-            res+=costs[b_aCost[i][1]][1];
+            res+=costs[b_aCost[i][1]][0];
         }
         return res;
     }
