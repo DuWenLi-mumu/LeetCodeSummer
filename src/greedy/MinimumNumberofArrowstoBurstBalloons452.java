@@ -22,7 +22,6 @@ public class MinimumNumberofArrowstoBurstBalloons452 {
             @Override
             public int compare(int[] ints, int[] t1) {
                 return ints[1]-t1[1];
-
             }
         });
         //求交集
