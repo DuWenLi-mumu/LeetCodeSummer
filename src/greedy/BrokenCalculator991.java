@@ -5,6 +5,8 @@ package greedy;
  * X只能*2或者-1
  * 等价于
  * y只能/2或者+1
+ *
+ *
  **/
 public class BrokenCalculator991 {
     public int brokenCalc(int X, int Y) {
