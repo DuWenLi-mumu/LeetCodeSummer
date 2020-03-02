@@ -20,7 +20,7 @@ public class Triangle120 {
         int[][] dp=new int[m][m];
         for (int i = m/2; i <m ; i++) {
             for (int j = m/2; j <m ; j++) {
-                dp[i][j]=11111111;
+                dp[i][j]=111111111;
             }
         }
 
