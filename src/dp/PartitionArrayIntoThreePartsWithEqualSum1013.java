@@ -2,6 +2,8 @@ package dp;
 
 /**
  * Created by 杜文丽 on 3/11/2020 11:08 PM
+ *
+ * 这个办法 实属暴力了emmm
  **/
 public class PartitionArrayIntoThreePartsWithEqualSum1013 {
     public boolean canThreePartsEqualSum(int[] A) {
