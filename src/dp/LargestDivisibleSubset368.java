@@ -23,29 +23,29 @@ public class LargestDivisibleSubset368 {
             return res;
         }
         Arrays.sort(nums);
-        int[] dp=new int[nums[nums.length-1]+1];
-        dp[nums[0]]=1;
+        int[] dp=new int[nums.length+1];
+        dp[0]=1;
         int count=1;
         int number=nums[0];
         for (int i = 1; i <nums.length ; i++) {
             boolean find=false;
             for (int j = i-1; j >=0 ; j--) {
                 if (nums[i]%nums[j]==0){
-                    dp[nums[i]]=Math.max(dp[nums[i]],dp[nums[j]]+1);
+                    dp[i]=Math.max(dp[i],dp[j]+1);
                     find=true;
                 }
             }
             if (!find){
-                dp[nums[i]]=1;
+                dp[i]=1;
             }
-            if (count<dp[nums[i]]){
-                count=dp[nums[i]];
+            if (count<dp[i]){
+                count=dp[i];
                 number=nums[i];
             }
         }
 
         for (int i = nums.length-1; i >=0 ; i--) {
-            if (dp[nums[i]]==count){
+            if (dp[i]==count){
                 res.add(nums[i]);
                 count--;
             }
