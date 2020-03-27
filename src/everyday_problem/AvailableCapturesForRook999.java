@@ -7,7 +7,6 @@ public class AvailableCapturesForRook999 {
     public int numRookCaptures(char[][] board) {
         int m=board.length;
         int n=board[0].length;
-
         int rx=-1;
         int ry=-1;
         for (int i = 0; i <m ; i++) {
