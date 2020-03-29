@@ -1,7 +1,6 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.List;
+import util.TreeNode;
 
 /**
  * Created by 杜文丽 on 2019/12/25 16:50

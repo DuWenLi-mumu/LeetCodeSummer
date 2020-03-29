@@ -7,26 +7,6 @@ import java.util.List;
  * Created by 杜文丽 on 8/6/2019 1:39 PM
  **/
 public class Triangle120 {
-    public static void main(String[] args) {
-        ArrayList<Integer> list1=new ArrayList<>();
-        ArrayList<Integer> list2=new ArrayList<>();
-        ArrayList<Integer> list3=new ArrayList<>();
-        ArrayList<Integer> list4=new ArrayList<>();
-        list1.add(2);
-        list2.add(3);list2.add(4);
-        list3.add(6);list3.add(5);list3.add(7);
-        list4.add(4);list4.add(1);list4.add(8);list4.add(3);
-
-        List<List<Integer>> lists = new ArrayList<>();
-        lists.add(list1);
-        lists.add(list2);
-        lists.add(list3);
-        lists.add(list4);
-        Solution120 s=new Solution120();
-        System.out.println(s.minimumTotal(lists));
-    }
-}
-class Solution120 {
     int[][] res=new int[1000][1000];
     int[][] dp=new int[1000][1000];
     int mymax=1000000;

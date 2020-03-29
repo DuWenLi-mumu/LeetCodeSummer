@@ -11,61 +11,6 @@ package array;
  * Explanation: [2,3] has the largest product 6.
  **/
 public class MaximumProductSubarray152 {
-    public static void main(String[] args) {
-        Solution152 s=new Solution152();
-        int[] nums={-1,2,2,-3};
-        System.out.println(s.maxProduct(nums));
-    }
-}
-class Solution152 {
-//
-//    int[][] dp=new int[100][10000];
-//    int res=0;
-//    int symbols=0;
-//    boolean zero=false;
-//    public void symbolSum(int[] nums){
-//        for (int i = 0; i <nums.length ; i++) {
-//            if (nums[i]<0){
-//                symbols++;
-//            }
-//            if (nums[i]==0){
-//                zero=true;
-//            }
-//        }
-//    }
-//    public int sub(int[] nums,int mini,int maxj){
-//        if (maxj>=nums.length){
-//            return 0;
-//        }
-//        if (dp[mini][maxj]!=0){
-//            return dp[mini][maxj];
-//        }
-//        int sum=1;
-//        for (int i=mini;i<=maxj;i++){
-//            sum*=nums[i];
-//        }
-//        dp[mini][maxj]=sum;
-//        return sum;
-//    }
-//    public int maxProduct(int[] nums) {
-//        symbolSum(nums);
-//        if (nums.length<=1){
-//            return nums[0];
-//        }
-//        if (symbols%2==0&&zero==false){
-//            return sub(nums,0,nums.length-1);
-//        }
-//        for (int i = 0; i <nums.length ; i++) {
-//            for (int j = i; j <nums.length ; j++) {
-//                if (nums[i]==0||nums[i]==1||nums[i]==-1){
-//                    continue;
-//                }
-//                res=Math.max(res,sub(nums,i,j));
-//            }
-//        }
-//        return res;
-//    }
-
     //日妈 dp这个也太强了吧，直接降到O(n)
     int[] dpmin=new int[100000];
     int[] dpmax=new int[100000];
