@@ -15,8 +15,11 @@ public class SortArray912 {
         if (low>=high){
             return;
         }
-        int l=low;
-        int h=high;
+        int index=partition(nums,low,high);
+        quickSort(nums,low,index-1);
+        quickSort(nums,index+1,high);
+    }
+    public int partition(int[] nums,int l,int h){
         int pivot=nums[l];
         while (l<h){
             while (l<h&&nums[h]>=pivot) h--;//右边找到一个小的
@@ -26,8 +29,7 @@ public class SortArray912 {
             nums[h]=nums[l];
         }
         nums[l]=pivot;
-        quickSort(nums,low,l-1);
-        quickSort(nums,l+1,h);
+        return l;
     }
 
 
