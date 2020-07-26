@@ -1,4 +1,7 @@
 package recursion;
+
+import util.TreeNode;
+
 class LongestUnivaluePath687{
     int res=0;
     public int longestUnivaluePath(TreeNode root) {
