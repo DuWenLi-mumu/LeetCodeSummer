@@ -8,7 +8,7 @@ import java.util.List;
  * Created by 杜文丽 on 7/26/2020 5:09 PM
  * 1.将单词列表中的n个单词统计归整到一个hashmap中
  * 2.从左到右依次扫描n个单词长度，若每个单词都出现在了hashmap中，且数目<=hashmap中保存的数量，则加入res列表
- * 3.若有一个没有出现或者数目大于hashmap中的数目，则break
+ * 3.若有一个没有出现或者数目大于hashmap中的数目，则break;
  **/
 public class SubstringWithConcatenationOfAllWords30 {
     public List<Integer> findSubstring(String s, String[] words) {
