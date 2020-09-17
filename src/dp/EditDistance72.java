@@ -10,8 +10,10 @@ public class EditDistance72 {
         EditDistance72 distance72=new EditDistance72();
         distance72.minDistance(word1,word2);
     }
+
     public int minDistance(String word1, String word2) {
         int len = Math.max(word1.length(), word2.length());
+        int[][] dp_table=new int[len+1][len+1];
         int[][] lev = new int[len + 1][len + 1];
         for (int i = 0; i <= word1.length(); i++) {
             lev[i][0] = i;
@@ -21,6 +23,7 @@ public class EditDistance72 {
         }
         for (int i = 1; i <= word1.length(); i++) {
             for (int j = 1; j <= word2.length(); j++) {
+
                 lev[i][j] = Math.min(lev[i - 1][j] + 1, lev[i][j - 1] + 1);
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     lev[i][j]=lev[i-1][j-1];
@@ -28,6 +31,7 @@ public class EditDistance72 {
 
                     lev[i][j] = Math.min(lev[i][j], lev[i - 1][j - 1] + 1);
                 }
+                dp_table[i][j]=lev[i][j];
             }
         }
         return lev[word1.length()][word2.length()];
