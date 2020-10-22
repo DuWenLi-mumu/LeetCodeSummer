@@ -3,7 +3,7 @@ package jzOffer;
 /**
  * Created by 杜文丽 on 10/22/2020 10:34 PM
  **/
-public class MissingNumber54 {
+public class MissingNumber53 {
     public int missingNumber(int[] nums) {
 
 
