@@ -1,30 +1,17 @@
 import java.util.*;
 class Solution{
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        int num = in.nextInt();
-        int times = 0;
-        while(times < num){
-            int N = in.nextInt();
-            int X = in.nextInt();
-            People[] ps=new People[N];
-            for(int i = 0;i < N;i++){
-                int n=i+1;
-                int v=in.nextInt();
-                People p=new People(n,(v-1)/X);
-                ps[i] = p;
-            }
-            Arrays.sort(ps);
-            System.out.print("Case #"+(times+1)+": ");
-            for(int i = 0;i < N;i++){
-                System.out.print(ps[i].num+" ");
-            }
-            System.out.println();
-            times++;
+    public static void main(String[] args) {
+        int i = 1<<31;
+        int j = ~(1<<31);
+        System.out.println(i);
+        System.out.println(j);
+        for (int k = i; k < j ; k++) {
+
         }
+        for (int k = 1<<31; k <~(1<<31) ; k++) {
 
+        }
     }
-
 }
 class People implements Comparable<People>{
     public int num;

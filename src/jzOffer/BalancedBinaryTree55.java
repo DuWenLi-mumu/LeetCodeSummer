@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by 杜文丽 on 10/22/2020 10:55 PM
  **/
-public class BalancedBinaryTree56 {
+public class BalancedBinaryTree55 {
     public boolean isBalanced(TreeNode root) {
         if (root == null){
             return true;
