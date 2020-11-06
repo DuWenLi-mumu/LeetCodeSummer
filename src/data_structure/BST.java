@@ -1,6 +1,6 @@
 package data_structure;
 
-class Node<T extends Integer> {
+class Node<T extends Comparable> {
     Node left;
     Node right;
     T val;
@@ -26,13 +26,13 @@ public class BST {
             Node pre = curr;
             while (curr != null) {
                 pre = curr;
-                if (curr.val > node.val) {
+                if (curr.val.compareTo(node.val) > 0) {
                     curr = curr.left;
                 } else {
                     curr = curr.right;
                 }
             }
-            if (pre.val > node.val) {
+            if (pre.val.compareTo(node.val) > 0) {
                 pre.left = node;
             } else {
                 pre.right = node;
@@ -46,7 +46,7 @@ public class BST {
         while (curr != null) {
             if (curr.val == node.val) {
                 return true;
-            } else if (curr.val > node.val) {
+            } else if (curr.val.compareTo(node.val) > 0) {
                 curr = curr.left;
             } else {
                 curr = curr.right;
@@ -68,7 +68,7 @@ public class BST {
             if (curr.val == node.val) {
                 removeSucess = true;
                 break;
-            } else if (curr.val > node.val) {
+            } else if (curr.val.compareTo(node.val) > 0) {
                 curr = curr.left;
             } else {
                 curr = curr.right;
@@ -78,13 +78,13 @@ public class BST {
         Node currRight = curr.right;
         if (currRight == null) {
 
-            if (pre.val > curr.val) {
+            if (pre.val.compareTo(curr.val) > 0) {
                 pre.left = curr.left;
             } else {
                 pre.right = curr.left;
             }
         } else {
-            if (pre.val > curr.val) {
+            if (pre.val.compareTo(curr.val) > 0) {
                 pre.left = curr.right;
             } else {
                 pre.right = curr.right;
