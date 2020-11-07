@@ -16,7 +16,7 @@ public class QueuesAreImplementedWithTwoStacks9 {
 
         }
         public int deleteHead() {
-            return 0;
+            return 1;
         }
     }
 }
