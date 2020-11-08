@@ -4,84 +4,44 @@ package jzOffer;
  * Created by 杜文丽 on 10/23/2020 3:46 PM
  **/
 public class FlipWordOrder58 {
+    String res = "";
     public String reverseWords(String s) {
-        String res = "";
+        if (s.length() < 1){
+            return s;
+        }
+        String reverse = new StringBuffer(s).reverse().toString();
+        char[] reverseChars = reverse.toCharArray();
         int begin = 0;
-        int end = s.length() - 1;
-        //去除首空格
-        while (begin < s.length()){
-            if (s.charAt(begin)==' '){
+        int end = 0;
+        while (begin < reverseChars.length && end < reverseChars.length){
+            while (begin < reverseChars.length && reverseChars[begin] == ' '){
                 begin++;
-            }else {
-                break;
             }
-        }
-        //去除尾空格
-        while (end >= 0){
-            if (s.charAt(end) == ' ') {
-                end--;
-            }else {
-                break;
+            end = begin;
+            while (end < reverseChars.length && reverseChars[end] != ' '){
+                end++;
             }
-        }
-        char[] str = new char[s.length()];
-        if (begin == end){
-            return String.valueOf(s.charAt(begin));
-        }
-        //在复制的时候直接翻转
-        int length = end - begin + 1;
-        for (int i = begin;i <= end; i++) {
-            str[i] = s.charAt(begin + end - i);
-        }
-        int left = begin;
-        int right = begin-2;
-        for (int i = begin; i <= end ;) {
-            //遇到空格 就要翻转
-            if (str[i] == ' '){
-                left = right+2;
-                right = i-1;
-                res += reverse(str,left,right)+" ";
-                if (i < end && str[i+1] == ' '){
-                    while (i <= end && str[i] == ' '){
-                        i++;
-                    }
-                    right = i-1;
-                }else {
-                    i++;
-                }
-
-            }else {
-                i++;
+            if (res.length() >= 1){
+                res += " ";
             }
+            reverse(reverseChars,begin,end - 1);
+            begin = end;
         }
-        int index = end;
-        while (str[index] != ' '){
+        int index = res.length()-1;
+        while (index >= 0 && res.charAt(index) == ' '){
             index--;
         }
-        res += reverse(str,index+1,end);
-
+        res = res.substring(0,index +1);
         return res;
     }
-    public String reverse(char[] x,int left, int right){
-        if (left == right){
-            return String.valueOf(x[left]);
+    public void reverse(char[] chars,int begin,int end){
+        if (begin >= chars.length || end >= chars.length){
+            return;
         }
-        int l = left;
-        int r = right;
-        while (left < right){
-            x[left] ^= x[right];
-            x[right] ^= x[left];
-            x[left] ^= x[right];
-            left++;
-            right--;
+        for (int i = end; i >= begin; i--) {
+            res += chars[i];
         }
-        String res = "";
-        for (int i = l; i <= r ; i++) {
-            res += x[i];
-        }
-        return res;
     }
-
     public static void main(String[] args) {
         String s = "a good   example";
         FlipWordOrder58 test = new FlipWordOrder58();
