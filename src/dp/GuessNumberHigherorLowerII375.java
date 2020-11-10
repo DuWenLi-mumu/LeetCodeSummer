@@ -1,10 +1,5 @@
 package dp;
 
-import java.util.Arrays;
-
-/**
- * Created by 杜文丽 on 3/16/2020 8:38 PM
- **/
 public class GuessNumberHigherorLowerII375 {
     public int getMoneyAmount(int n) {
         if (n < 1) {
