@@ -24,7 +24,6 @@ public class MergeTwoSortedLinkedLists25 {
             }
             tail = tail.next;
         }
-        The substructure of a tree
         return head.next;
     }
 }
