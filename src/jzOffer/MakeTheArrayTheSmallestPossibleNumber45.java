@@ -1,6 +1,5 @@
 package jzOffer;
 
-import javax.jnlp.IntegrationService;
 import java.util.*;
 
 /**
