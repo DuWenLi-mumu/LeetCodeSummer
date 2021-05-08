@@ -9,45 +9,48 @@ import java.util.Stack;
  **/
 public class PostOrderImp {
     Stack<TreeNode> stack = new Stack<>();
-    public void print(TreeNode node){
-        System.out.print(node.val+" ");
+
+    public void print(TreeNode node) {
+        System.out.print(node.val + " ");
     }
-    public void add(TreeNode node){
-        if (node==null){
+
+    public void add(TreeNode node) {
+        if (node == null) {
             return;
         }
-        if (node.right!=null){
+        if (node.right != null) {
             stack.add(node.right);
         }
-        if (node.left!=null){
+        if (node.left != null) {
             stack.add(node.left);
         }
     }
-    public void postOrderNonRecursion(TreeNode root){
+
+    public void postOrderNonRecursion(TreeNode root) {
         stack.add(root);
         add(root);
-        TreeNode curr=stack.peek();
-        TreeNode pre=curr;
-        while (!stack.empty()){
-            curr=stack.peek();
-            if (pre==curr.right){
+        TreeNode curr = stack.peek();
+        TreeNode pre = curr;
+        while (!stack.empty()) {
+            curr = stack.peek();
+            if (pre == curr.right) {
                 print(curr);
-                pre=curr;
+                pre = curr;
                 stack.pop();
                 continue;
             }
-            if (pre==curr.left){
+            if (pre == curr.left) {
                 add(curr.right);
-            }else {
-                while (curr.left!=null||curr.right!=null){
+            } else {
+                while (curr.left != null || curr.right != null) {
                     add(curr);
-                    curr=stack.peek();
+                    curr = stack.peek();
                 }
             }
 
-            curr=stack.pop();
+            curr = stack.pop();
             print(curr);
-            pre=curr;
+            pre = curr;
         }
 
     }
@@ -63,15 +66,15 @@ public class PostOrderImp {
         TreeNode n8 = new TreeNode(8);
         TreeNode n9 = new TreeNode(9);
 
-        n1.left=n2;
-        n1.right=n3;
-        n2.left=n4;
-        n2.right=n5;
-        n3.left=n6;
-        n3.right=n7;
-        n5.left=n8;
-        n8.right=n9;
-        PostOrderImp test=new PostOrderImp();
+        n1.left = n2;
+        n1.right = n3;
+        n2.left = n4;
+        n2.right = n5;
+        n3.left = n6;
+        n3.right = n7;
+        n5.left = n8;
+        n8.right = n9;
+        PostOrderImp test = new PostOrderImp();
         test.postOrderNonRecursion(n1);
     }
 }
